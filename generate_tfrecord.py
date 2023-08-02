@@ -89,10 +89,10 @@ def xml_to_csv(path):
                      width,
                      height,
                      member.find('name').text,
-                     int(bndbox.find('xmin').text),
-                     int(bndbox.find('ymin').text),
-                     int(bndbox.find('xmax').text),
-                     int(bndbox.find('ymax').text),
+                     int(bndbox.find('xmin').text) / width,
+                     int(bndbox.find('ymin').text) / height,
+                     int(bndbox.find('xmax').text) / width,
+                     int(bndbox.find('ymax').text) / height,
                      )
             xml_list.append(value)
     column_name = ['filename', 'width', 'height',
